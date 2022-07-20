@@ -7,6 +7,7 @@ name = "pypi"
 gunicorn = "*"
 django-environ = "*"
 whitenoise = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
