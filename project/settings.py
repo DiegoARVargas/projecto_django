@@ -40,15 +40,16 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.admin', #Panel de administracion
+    'django.contrib.auth',  #app con funcionalidades de autenticacion
+    'django.contrib.contenttypes',  #app 
+    'django.contrib.sessions',  #app para la adm de sesiones
+    'django.contrib.messages',  #app para control de mensajes simples (no es Chat)
+    'django.contrib.staticfiles',   #app para trabajar con archivos estaticos
     'polls',
 ]
 
+#El MIDDLEWARE son clases que son ejecutadas en el momento de procesar una request, antes de ejecutar una view..
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -60,8 +61,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'project.urls'
+ROOT_URLCONF = 'project.urls' #El define cual sera el modulo urls.py principal del proyecto.
 
+#Simplemente es el sistema de templates de django.
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -78,12 +80,14 @@ TEMPLATES = [
     },
 ]
 
+#El modulo principal de WSGI.
 WSGI_APPLICATION = 'project.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#Las configuracions del banco de datos.
 DATABASES = {
     'default': env.db(),
 }
@@ -126,10 +130,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+STATIC_ROOT = 'static' #La carpeta donde los archivos estaticos estan.
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+#La clase que controla esos archivos.
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
