@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de preguntas</title>
+</head>
+<body>
+    <h1>Questions</h1>
+
+<ul>
+    {% for qt in questions %}
+    <li>{{ qt.question_text }} | {{ qt.pub_data }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
