@@ -41,4 +41,18 @@ def db_interact(request):
         request=request,
         template_name='polls/question.html',
         context={'questions': questions}
-    )   
+    )
+
+from .forms import GoogleForm
+
+def form_test(request):
+    questions = Question.objects.all()
+    form = GoogleForm()
+    return render(
+        request=request,
+        template_name='polls/question.html',
+        context={
+            'questions': questions,
+            'form': form,
+        }
+    )      

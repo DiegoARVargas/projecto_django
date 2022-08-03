@@ -9,9 +9,10 @@
 
 <ul>
     {% for qt in questions %}
-    <li>{{ qt.question_text }} | {{ qt.pub_data }}</li>
+        <li>{{ qt.question_text }} | {{ qt.pub_data }}</li>
     {% endfor %}
 </ul>
-
+<hr>
+{{ form.as_p }}
 </body>
 </html>
