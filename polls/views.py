@@ -43,16 +43,18 @@ def db_interact(request):
         context={'questions': questions}
     )
 
-from .forms import GoogleForm
+from .forms import GoogleForm, DeudorForm
 
 def form_test(request):
     questions = Question.objects.all()
     form = GoogleForm()
+    dform = DeudorForm()
     return render(
         request=request,
         template_name='polls/question.html',
         context={
             'questions': questions,
             'form': form,
+            'dform': dform,
         }
     )      
