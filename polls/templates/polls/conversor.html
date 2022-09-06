@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor</title>
+</head>
+<body>
+<hr>
+<form method="POST">
+    {% csrf_token %} <!--Esto lo usamos cuando enviamos una request con el metodo POST-->
+    {{ form.as_p }}
+    <input type="submit" value="ENVIAR">
+</form>
+<hr>
+</body>
+</html>

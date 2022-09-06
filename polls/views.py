@@ -57,4 +57,20 @@ def form_test(request):
             'form': form,
             'dform': dform,
         }
-    )      
+    )
+from .forms import ConvertForm
+
+def conversor_monedas(request):
+    if request.method == 'POST':
+        form = ConvertForm(request.POST)
+        if form.is_valid(): # el metodo .is_valid() nos va retornar tru o false
+            print('DATOS VALIDOS!!')
+    else:
+        form = ConvertForm()
+    return render(
+        request=request,
+        template_name='polls/conversor.html',
+        context={
+            'form': form,
+        },
+    )
